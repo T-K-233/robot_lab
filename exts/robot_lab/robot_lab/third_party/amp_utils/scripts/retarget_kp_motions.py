@@ -75,11 +75,9 @@ def build_markers(num_markers):
 
     markers = []
     for i in range(num_markers):
-        if (
-            (i == REF_NECK_JOINT_ID)
-            or (i == REF_PELVIS_JOINT_ID)
-            or (i in REF_HIP_JOINT_IDS)
-        ):
+        if i == REF_NECK_JOINT_ID or i == REF_PELVIS_JOINT_ID:
+            col = [0, 1, 0, 1]
+        elif i in REF_HIP_JOINT_IDS:
             col = [0, 0, 1, 1]
         elif i in REF_TOE_JOINT_IDS:
             col = [1, 0, 0, 1]
